@@ -6,7 +6,7 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  private URL_API: string = environment.ApiUrl + '/facturacion/login';
+  private URL_API: string = environment.ApiUrl + '/login';
 
   constructor(private http: HttpClient) { }
 
@@ -14,7 +14,7 @@ export class LoginService {
 
   login(username: string, password: string): Observable<any> {
 
-    const params = { username: username, password: password };
+    const params = { email: username, password: password };
 
      return this.http.get<any>(this.URL_API, { 
       params: params 
