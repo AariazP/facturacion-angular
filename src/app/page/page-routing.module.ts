@@ -8,6 +8,8 @@ import { Cod404Component } from '../components/cod404/cod404.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { HomeClienteComponent } from '../components/clientes/home-cliente/home-cliente.component';
 import { ListaFacturasComponent } from '../components/facturas/lista-facturas/lista-facturas.component';
+import { ProveedorComponent } from './proveedor/proveedor.component';
+import { NuevoProveedorComponent } from '../components/proveedores/nuevo-proveedor/nuevo-proveedor.component';
 
 const routes: Routes = [
 
@@ -35,9 +37,14 @@ const routes: Routes = [
       path: 'lista-factura',
       component: ListaFacturasComponent
     },
-   
-
-    
+    {
+      path: 'proveedor',
+      component: ProveedorComponent
+    },
+    {
+      path: 'proveedor/nuevo',
+      component: NuevoProveedorComponent
+    }
 ];
 
 @NgModule({

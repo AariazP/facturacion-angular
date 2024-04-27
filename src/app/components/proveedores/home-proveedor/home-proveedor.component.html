@@ -1,0 +1,51 @@
+<div class="table-container">
+  <p class="rojo">
+    Tabla de clientes
+  </p>
+
+  <div class="buscar">
+    <label for="">Buscar: </label>
+    <input type="text" (keyup)="buscar($event)">
+    
+  </div>
+
+  <button id="nuevo" routerLink="/app/proveedor/nuevo" >Nuevo +</button>
+  
+  <div class="separador">
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>NIT</th>
+            <th>nombre</th>
+            <th>direccion</th>
+            <th>telefono</th>
+            <th class="eliminar">Acciones</th>
+          </tr>
+        </thead>
+        
+
+        <tbody>
+          <tr *ngFor="let cliente of filtroClientes">
+            <td>{{ cliente.NIT }}</td>
+            <td >{{ cliente.nombre }}</td>
+            <td>{{ cliente.direccion }}</td>
+            <td>{{ cliente.telefono }}</td>
+            <td class="eliminar">
+              <button (click)="eliminarPorId(cliente.idCliente)">❌</button>
+              <button class="editar" (click)="toggleModoEdicion(cliente)">✏️</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="pup-up" [ngClass]="{ 'oculto': modoOculto }">
+    <div class="pop-up-container">
+      <span class="cerrar" (click)="editarModoOcuto()">❌</span>
+      <app-editar-proveedor>class="editar" [personaEditar]="personaEditar" (modoOculto)="editarModoOcuto()"></app-editar-proveedor>
+    </div>
+  </div>
+
+</div>

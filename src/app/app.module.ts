@@ -20,6 +20,10 @@ import { LoginComponent } from './page/login/login.component';
 import { PageModule } from './page/page.module';
 import { CabfacturaComponent } from './components/facturas/cabfactura/cabfactura.component';
 import { ListaFacturasComponent } from './components/facturas/lista-facturas/lista-facturas.component';
+import { EditarProveedorComponent } from './components/proveedores/editar-proveedor/editar-proveedor.component';
+import { HomeProveedorComponent } from './components/proveedores/home-proveedor/home-proveedor.component';
+import { NuevoProveedorComponent } from './components/proveedores/nuevo-proveedor/nuevo-proveedor.component';
+import { ProveedorComponent } from './page/proveedor/proveedor.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +41,11 @@ import { ListaFacturasComponent } from './components/facturas/lista-facturas/lis
     EditarProductoComponent,
     LoginComponent,
     CabfacturaComponent,
-    ListaFacturasComponent
-   
+    ListaFacturasComponent,
+    EditarProveedorComponent,
+    HomeProveedorComponent,
+    NuevoProveedorComponent,
+    ProveedorComponent
 
     
   ],
