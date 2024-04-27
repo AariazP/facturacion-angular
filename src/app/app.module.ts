@@ -20,7 +20,6 @@ import { LoginComponent } from './page/login/login.component';
 import { PageModule } from './page/page.module';
 import { CabfacturaComponent } from './components/facturas/cabfactura/cabfactura.component';
 import { ListaFacturasComponent } from './components/facturas/lista-facturas/lista-facturas.component';
-import { ProveedoresComponent } from './components/proveedores/proveedores.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +37,7 @@ import { ProveedoresComponent } from './components/proveedores/proveedores.compo
     EditarProductoComponent,
     LoginComponent,
     CabfacturaComponent,
-    ListaFacturasComponent,
-    ProveedoresComponent,
+    ListaFacturasComponent
    
 
     
