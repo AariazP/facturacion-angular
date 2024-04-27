@@ -13,6 +13,11 @@ export class ClientesService {
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
+
+    //TODO: hay que agregar los parametros de la solicitud como metodo de autenticacion (email y contraseña)
+
+    const params = {}
+
     return this.http.get<any>(`${this.URL_API}/clientes`);
   }
 

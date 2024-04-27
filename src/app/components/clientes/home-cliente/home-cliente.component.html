@@ -16,13 +16,11 @@
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Dni</th>
-            <th>Nombre</th>
-            <th>Direccion</th>
-            <th>Correo</th>
-            <th>Activo</th>
-            <th>FechaCreacion</th>
+            <th>identificacion</th>
+            <th>nombre</th>
+            <th>direccion</th>
+            <th>correo</th>
+            <th>fecha creacion</th>
             <th class="eliminar">Acciones</th>
           </tr>
         </thead>
@@ -30,12 +28,10 @@
 
         <tbody>
           <tr *ngFor="let cliente of filtroClientes">
-            <td>{{ cliente.idCliente }}</td>
-            <td>{{ cliente.rucDni }}</td>
+            <td>{{ cliente.identificacion }}</td>
             <td >{{ cliente.nombre }}</td>
             <td>{{ cliente.direccion }}</td>
             <td>{{ cliente.correo }}</td>
-            <td>{{ cliente.activo }}</td>
             <td>{{ cliente.fechaCreacion }}</td>
             <td class="eliminar">
               <button (click)="eliminarPorId(cliente.idCliente)">❌</button>

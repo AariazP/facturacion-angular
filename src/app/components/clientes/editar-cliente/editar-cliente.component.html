@@ -2,10 +2,10 @@
   <form [formGroup]="personaForm" (ngSubmit)="guardar()">
 
     <div>
-      <label for="rucDni">Dni:</label>
+      <label for="identificacion">identificacion:</label>
       <div>
-        <input maxlength="15" type="text" formControlName="rucDni" placeholder="Dni">
-        <span *ngIf="personaForm.get('rucDni') && personaForm.get('rucDni')!.errors && personaForm.get('rucDni')!.touched">
+        <input maxlength="15" type="text" formControlName="identificacion" placeholder="identificacion">
+        <span *ngIf="personaForm.get('identificacion') && personaForm.get('identificacion')!.errors && personaForm.get('identificacion')!.touched">
           Por favor, ingrese solo números
         </span>
       </div>
@@ -47,21 +47,6 @@
           Por favor, ingrese un correo válido.
         </span>
       </div>
-    </div>
-
-    <div>
-      <label for="activo">Activo:</label>
-      <div>
-        <select name="" id="activo" formControlName="activo">
-          <option [selected]="true" value="1">Si</option>
-          <option value="0">No</option>
-        </select>
-
-        <span *ngIf="personaForm.get('activo')?.invalid && (personaForm.get('activo')?.dirty || personaForm.get('activo')?.touched)">
-          Por favor, ingrese un valor válido.
-        </span>
-      </div>
-
     </div>
     <button type="submit">Guardar</button>
   </form>

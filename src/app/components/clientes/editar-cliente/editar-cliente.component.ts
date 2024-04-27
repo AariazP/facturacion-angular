@@ -20,14 +20,11 @@ export class EditarClienteComponent {
 
   constructor(private fb: FormBuilder, private clienteService: ClientesService) {
     this.personaForm = this.fb.group({
-      idCliente: '',
-      rucDni: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]*'), Validators.maxLength(15)]],
+      identificacion: '',
       nombre: ['', [Validators.required, soloTexto()]],
       direccion: ['', [Validators.required,]],
       correo: ['', [Validators.required, validarCorreo()]],
-      activo: ['', [Validators.required]],
-      fechaCreacion: ['', [Validators.required]],
-  
+      fechaCreacion: ['', [Validators.required]]
     });
 
     console.log("constructor");

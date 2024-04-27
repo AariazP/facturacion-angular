@@ -13,11 +13,10 @@ export class NuevoComponent {
   existe: boolean = false;
   constructor(private formBuilder: FormBuilder, private clientesService: ClientesService) {
     this.formulario = this.formBuilder.group({
-      rucDni: ['', [Validators.required, Validators.pattern('[0-9]*'), Validators.maxLength(15)]],
+      identificacion: ['', [Validators.required, Validators.pattern('[0-9]*'), Validators.maxLength(15)]],
       nombre: ['', [Validators.required, soloTexto()]],
       direccion: ['', [Validators.required]],
-      correo: ['', [Validators.required, validarCorreo()]],
-      activo: [1],
+      correo: ['', [Validators.required, validarCorreo()]]
     });
   }
 
@@ -32,6 +31,9 @@ export class NuevoComponent {
       return;
     }
 
+    // agrego el campo fechaCreacion de forma dinamica al elemento formulario y le asigno la fecha actual
+    this.formulario.addControl('fechaCreacion', this.formBuilder.control(new Date().toISOString().split('T')[0]));
+    
     this.clientesService.enviarDatos(this.formulario.value).subscribe(response => {
       console.log('Datos enviados correctamente:', response);
       alert('Datos registrados correctamente');

@@ -5,7 +5,7 @@
   <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
     <div>
-      <input [maxLength]="15" pattern="[a-zA-Z0-9]*" type="text" formControlName="rucDni" placeholder="Dni" (keyup)="validarCodigo($event) " >
+      <input [maxLength]="15" pattern="[a-zA-Z0-9]*" type="text" formControlName="identificacion" placeholder="identificacion" (keyup)="validarCodigo($event) " >
       <span *ngIf="formulario.get('cantidadProducto')?.hasError('cantidadInvalida')  && formulario.get('rucDni') && formulario.get('rucDni')!.errors && formulario.get('rucDni')!.touched">
         Por favor, ingrese solo números
       </span>
@@ -32,22 +32,6 @@
         Por favor, ingrese un correo válido.
       </span>
     </div>
-
-    <div>
-      <!-- <input class="fecha" type="number" formControlName="activo" placeholder="activo"> -->
-
-      <select name="" id="" formControlName="activo">
-        <option [selected]="true" value="1">Si</option>
-        <option value="0">No</option>
-      </select>
-
-      <span *ngIf="formulario.get('activo')!.invalid && (formulario.get('activo')?.dirty || formulario.get('activo')?.touched)">
-        Por favor, ingrese una fecha válida.
-      </span>
-    </div>
-
-
-    
     <button type="submit">Guardar Datos</button>
   </form>
 </div>
