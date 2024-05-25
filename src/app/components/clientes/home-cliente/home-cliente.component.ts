@@ -48,7 +48,7 @@ export class HomeClienteComponent {
     );
     console.log(this.filtroClientes)
   }
-
+//
   toggleModoEdicion(persona: any) {
     this.personaEditar = persona;
     this.editarModoOcuto()
