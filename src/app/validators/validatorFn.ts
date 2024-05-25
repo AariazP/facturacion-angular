@@ -36,9 +36,10 @@ export function validarDecimalConDosDecimales(): ValidatorFn {
       return null; 
     }
 
-    const regex = /^\d+(\.\d{1,2})?$/; 
+    const regex = /^\d+/; 
 
-    if (!regex.test(valorIngresado)) {
+
+    if (regex.test(valorIngresado)) {
       return { 'decimalInvalido': true }; 
     }
 
